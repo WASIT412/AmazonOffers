@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="row">
+            @{
+
+                foreach (var row in Model.Data.Data.Best_Sellers)
+                {
+                  
+               <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
+                <img src="@row.Product_photo" class="card-img-top" alt="...">
+                        <div class="card-body">
+                    <h5 class="card-title">@row.Product_title</h5>
+                            <p class="card-text">@row.Product_price</p>
+                            <a href="@row.Product_url" target="_blank" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+           
+                }
+            }
+    <iframe width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCg6Ty6mQmhHG_rKCGFC1BhQm9f0H8y_dI
+    &q=25.074554443359375,55.13936233520508">
+    </iframe>
+        </div>
+   
